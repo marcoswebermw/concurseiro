@@ -1,4 +1,4 @@
-package conc.model;
+package br.mw.conc.model;
 
 /**
  * Classe que representa a entidade Pergunta.

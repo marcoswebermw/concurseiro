@@ -1,4 +1,4 @@
-package conc.model;
+package br.mw.conc.model.persistencia;
 
 /**
  * Classe com as funcionalidades para acesso ao banco de dados.
@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.mw.conc.model.Pergunta;
 
 /**
  * @author marcos

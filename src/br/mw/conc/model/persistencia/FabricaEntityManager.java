@@ -1,4 +1,4 @@
-package conc.model;
+package br.mw.conc.model.persistencia;
 
 /**
  * Classe que gerencia o acesso ao banco de dados. 
