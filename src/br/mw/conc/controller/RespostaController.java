@@ -26,6 +26,10 @@ public class RespostaController {
 		return new RespostaDAO().busca(codResposta);
 	}
 
+	public List<Resposta> buscaRespostaPergunta(long codPergunta){
+		return new RespostaDAO().buscaRespostaPergunta(codPergunta);
+	}
+	
 	public List<Resposta> listar() {
 		return new RespostaDAO().lista();
 	}

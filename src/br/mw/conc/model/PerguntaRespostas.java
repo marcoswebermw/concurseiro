@@ -35,7 +35,7 @@ public class PerguntaRespostas {
 	public Resposta pegaRespostaCerta(){
 		Resposta respostaCerta = new Resposta();
 		for (Resposta r : respostas) {
-			if (r.getCerta().toUpperCase().equals("S")) {
+			if (r.getCod() == pergunta.getRespostaCerta()) {
 				respostaCerta = r;
 			}
 		}

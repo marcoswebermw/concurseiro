@@ -41,6 +41,14 @@ public class RespostaDAO {
 		return resposta;
 	}
 
+	public List<Resposta> buscaRespostaPergunta(long codPergunta) {
+		Query query = entityManager
+				.createQuery("SELECT r FROM Resposta r WHERE fk_pergunta_cod = "
+						+ codPergunta);
+		List<Resposta> respostas = query.getResultList();
+		return respostas;
+	}
+
 	public List<Resposta> lista() {
 		Query query = entityManager.createQuery("SELECT r FROM Resposta r");
 		List<Resposta> respostas = query.getResultList();

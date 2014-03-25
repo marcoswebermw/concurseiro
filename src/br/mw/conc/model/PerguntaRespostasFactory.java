@@ -19,12 +19,7 @@ public class PerguntaRespostasFactory {
 		ArrayList<Resposta> listaRespostas;
 
 		for (Pergunta pergunta : perguntas) {
-			listaRespostas = new ArrayList<Resposta>();
-			for (Resposta resposta : respostas) {
-				if (pergunta.getCod() == resposta.getCodigoPergunta()) {
-					listaRespostas.add(resposta);
-				}
-			}
+			listaRespostas = (ArrayList<Resposta>) pergunta.getRespostas();
 			perguntaRespostas = new PerguntaRespostas(pergunta, listaRespostas);
 			listaPerguntasRespostas.add(perguntaRespostas);
 		}

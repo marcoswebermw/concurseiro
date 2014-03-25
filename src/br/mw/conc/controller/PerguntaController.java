@@ -8,6 +8,7 @@ import br.mw.conc.model.persistencia.PerguntaDAO;
 public class PerguntaController {
 
 	public void adicionar(Pergunta pergunta) {
+		// validarPergunta(pergunta);
 		new PerguntaDAO().add(pergunta);
 	}
 

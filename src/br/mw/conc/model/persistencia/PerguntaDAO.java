@@ -48,7 +48,7 @@ public class PerguntaDAO {
 	}
 
 	public List<Pergunta> lista() {
-		Query query = entityManager.createQuery("SELECT p FROM Pergunta p");
+		Query query = entityManager.createQuery("SELECT p FROM Pergunta p ORDER BY cod");
 		List<Pergunta> perguntas = query.getResultList();
 		return perguntas;
 	}

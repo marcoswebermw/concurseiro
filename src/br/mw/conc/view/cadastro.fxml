@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane minHeight="-1.0" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="br.mw.conc.view.GerenciarPerguntasController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <SplitPane dividerPositions="0.23809523809523808" focusTraversable="true" orientation="VERTICAL" prefHeight="548.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="52.0">
+          <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="130.0" prefWidth="607.0">
+              <children>
+                <TableView fx:id="perguntas" minHeight="-1.0" onMouseClicked="#selecionarPerguntaTabela" prefHeight="242.0" prefWidth="607.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <columns>
+                    <TableColumn prefWidth="75.0" text="Cod." />
+                    <TableColumn prefWidth="300.0" text="Categoria" />
+                    <TableColumn prefWidth="300.0" text="Banca" />
+                    <TableColumn prefWidth="75.0" text="Ano" />
+                    <TableColumn minWidth="260.0" prefWidth="0.0" text="Pergunta" />
+                  </columns>
+                </TableView>
+              </children>
+            </AnchorPane>
+            <AnchorPane fx:id="detalhes" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+              <children>
+                <Group id="Group" fx:id="grupoCabPergResp" autoSizeChildren="true" layoutX="74.0" layoutY="11.0" scaleX="1.0" scaleY="1.0">
+                  <children>
+                    <Group id="Group" fx:id="grupoCabecalho" layoutX="4.0" layoutY="0.0">
+                      <children>
+                        <Label id="cod" fx:id="lblCod" layoutX="-40.0" layoutY="0.0" text="Cod." />
+                        <TextField fx:id="tfCod" layoutX="0.0" layoutY="-3.0" minWidth="-Infinity" prefWidth="52.0" />
+                        <TextField fx:id="tfCategoria" layoutX="138.0" layoutY="-4.0" minWidth="-Infinity" prefWidth="239.0" promptText="Ex.: Direito Administrativo" />
+                        <TextField fx:id="tfBanca" layoutX="442.0" layoutY="-4.0" minWidth="-Infinity" prefWidth="239.0" promptText="Ex.: FCC - Fundação Carlos Chagas" />
+                        <TextField fx:id="tfAno" layoutX="737.0" layoutY="-4.0" minWidth="-Infinity" prefWidth="77.0" />
+                        <Label fx:id="lblCategoria" layoutX="68.0" layoutY="0.0" text="Categoria" />
+                        <Label fx:id="lblAno" layoutX="703.0" layoutY="0.0" text="Ano" />
+                        <Label fx:id="lblBanca" layoutX="392.0" layoutY="0.0" text="Banca" />
+                      </children>
+                    </Group>
+                    <Group id="Group" fx:id="grupoPerguntasRespostas" autoSizeChildren="true" layoutX="0.0" layoutY="55.0">
+                      <children>
+                        <Label fx:id="lblPergunta" layoutX="-40.0" layoutY="-27.0" text="Pergunta" textFill="#00cc52" />
+                        <TextArea id="tfRespostaA" fx:id="taPergunta" layoutX="-40.0" layoutY="-12.0" minWidth="-Infinity" prefHeight="56.0" prefWidth="950.0" wrapText="true" />
+                        <TextArea fx:id="taRespostaA" layoutX="-40.0" layoutY="60.0" minWidth="-Infinity" prefHeight="52.0" prefWidth="950.0" wrapText="true" />
+                        <TextArea fx:id="taRespostaB" layoutX="-40.0" layoutY="128.0" minWidth="-Infinity" prefHeight="52.0" prefWidth="950.0" wrapText="true" />
+                        <TextArea fx:id="taRespostaC" layoutX="-40.0" layoutY="197.0" minWidth="-Infinity" prefHeight="52.0" prefWidth="950.0" wrapText="true" />
+                        <TextArea fx:id="taRespostaD" layoutX="-40.0" layoutY="266.0" minWidth="-Infinity" prefHeight="52.0" prefWidth="950.0" wrapText="true" />
+                        <TextArea fx:id="taRespostaE" layoutX="-40.0" layoutY="334.0" minWidth="-Infinity" prefHeight="52.0" prefWidth="950.0" wrapText="true" />
+                        <Label fx:id="lblRespostaA" layoutX="-40.0" layoutY="45.0" text="Resposta A">
+                          <textFill>
+                            <Color blue="1.000" green="0.000" red="0.320" fx:id="x1" />
+                          </textFill>
+                        </Label>
+                        <Label fx:id="lblRespostaB" layoutX="-40.0" layoutY="113.0" text="Resposta B" textFill="$x1" />
+                        <Label fx:id="lblRespostaC" layoutX="-40.0" layoutY="181.0" text="Resposta C" textFill="$x1" />
+                        <Label fx:id="lblRespostaD" layoutX="-40.0" layoutY="250.0" text="Resposta D" textFill="$x1" />
+                        <Label fx:id="lblRespostaE" layoutX="-40.0" layoutY="316.0" text="Resposta E" textFill="$x1" />
+                        <Label fx:id="lblObservacoes" layoutX="-40.0" layoutY="388.0" text="Observações" textFill="#ffb800" />
+                        <TextArea fx:id="taObservacoes" layoutX="-40.0" layoutY="403.0" minWidth="-Infinity" prefHeight="59.0" prefWidth="950.0" promptText="Coloque aqui comentários sobre as resposta certa e erradas caso necessário" wrapText="true" />
+                        <RadioButton fx:id="rbRespostaA" layoutX="754.0" layoutY="44.0" mnemonicParsing="false" text="A é a resposta certa" textFill="RED">
+                          <toggleGroup>
+                            <ToggleGroup fx:id="respostaCorreta" />
+                          </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rbRespostaB" layoutX="754.0" layoutY="112.0" mnemonicParsing="false" text="B é a resposta certa" textFill="RED" toggleGroup="$respostaCorreta" />
+                        <RadioButton fx:id="rbRespostaC" layoutX="754.0" layoutY="181.0" mnemonicParsing="false" text="C é a resposta certa" textFill="RED" toggleGroup="$respostaCorreta" />
+                        <RadioButton fx:id="rbRespostaD" layoutX="754.0" layoutY="250.0" mnemonicParsing="false" text="D é a resposta certa" textFill="RED" toggleGroup="$respostaCorreta" />
+                        <RadioButton fx:id="rbRespostaE" layoutX="754.0" layoutY="318.0" mnemonicParsing="false" text="E é a resposta certa" textFill="RED" toggleGroup="$respostaCorreta" />
+                      </children>
+                    </Group>
+                  </children>
+                </Group>
+                <Label id="lbCategoriaErro" fx:id="lblCategoriaErro" layoutX="285.0" layoutY="38.0" text="" textFill="RED" />
+                <Label fx:id="lblBancaErro" layoutX="526.0" layoutY="38.0" text="" textFill="RED" />
+                <Label fx:id="lblAnoErro" layoutX="815.0" layoutY="38.0" text="" textFill="RED" />
+                <Label id="lblRespostaAErro" fx:id="lblPerguntaErro" layoutX="120.0" layoutY="38.0" text="" textFill="RED" />
+                <Label fx:id="lblRespostaAErro" layoutX="120.0" layoutY="110.0" text="" textFill="RED" />
+                <Label fx:id="lblRespostaBErro" layoutX="120.0" layoutY="179.0" text="" textFill="RED" />
+                <Label fx:id="lblRespostaCErro" layoutX="120.0" layoutY="247.0" text="" textFill="RED" />
+                <Label id="lblRespostaErro" fx:id="lblRespostaDErro" layoutX="120.0" layoutY="317.0" text="" textFill="RED" />
+                <Label id="lblRespostaErro" fx:id="lblRespostaEErro" layoutX="120.0" layoutY="382.0" text="" textFill="RED" />
+                <Label fx:id="lblRespostaCertaErro" layoutX="593.0" layoutY="110.0" text="" textFill="RED" />
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+        <HBox id="HBox" fx:id="hboxBotoes" alignment="CENTER" layoutX="804.0" layoutY="12.0" spacing="10.0">
+          <children>
+            <Button fx:id="btnDeletar" mnemonicParsing="false" onAction="#deletarPergunta" text="Deletar">
+              <effect>
+                <Reflection />
+              </effect>
+            </Button>
+            <Button id="btnNovo" fx:id="btnNova" mnemonicParsing="false" onAction="#novaPergunta" text="Nova">
+              <effect>
+                <Reflection />
+              </effect>
+            </Button>
+            <Button fx:id="btnSalvar" mnemonicParsing="false" onAction="#salvarPergunta" text="Salvar">
+              <effect>
+                <Reflection />
+              </effect>
+            </Button>
+          </children>
+        </HBox>
+        <Label fx:id="lblMensagem" layoutX="475.0" layoutY="18.0" text="" textFill="#00b4cc" underline="false">
+          <effect>
+            <Glow />
+          </effect>
+        </Label>
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>

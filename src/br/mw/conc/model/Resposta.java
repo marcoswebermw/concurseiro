@@ -19,13 +19,6 @@ public class Resposta {
 	@Column(name = "texto")
 	private String texto;
 
-	@Column(name = "certa")
-	// Indica se esta é uma resposta correta ou não.
-	private String certa;
-
-	@Column(name = "fk_pergunta_cod")
-	private long codigoPergunta;
-
 	// GETTERS E SETTERS
 
 	public long getCod() {
@@ -42,22 +35,6 @@ public class Resposta {
 
 	public void setTexto(String texto) {
 		this.texto = texto;
-	}
-
-	public String getCerta() {
-		return certa;
-	}
-
-	public void setCerta(String certa) {
-		this.certa = certa;
-	}
-
-	public long getCodigoPergunta() {
-		return codigoPergunta;
-	}
-
-	public void setCodigoPergunta(long codigoPergunta) {
-		this.codigoPergunta = codigoPergunta;
 	}
 
 }
