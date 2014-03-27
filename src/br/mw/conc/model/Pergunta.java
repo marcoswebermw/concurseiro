@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
  */
 @Entity
 public class Pergunta {
+
 	@Id
 	@GeneratedValue
 	@Column(name = "cod")
@@ -31,6 +32,9 @@ public class Pergunta {
 
 	@Column(name = "banca")
 	private String banca;
+
+	@Column(name = "prova")
+	private String prova;
 
 	@Column(name = "ano")
 	private long ano;
@@ -76,6 +80,14 @@ public class Pergunta {
 		this.banca = banca;
 	}
 
+	public String getProva() {
+		return prova;
+	}
+
+	public void setProva(String prova) {
+		this.prova = prova;
+	}	
+	
 	public long getAno() {
 		return ano;
 	}

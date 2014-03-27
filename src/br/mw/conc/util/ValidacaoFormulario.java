@@ -53,7 +53,7 @@ public class ValidacaoFormulario {
 				Calendar ano = Calendar.getInstance();
 				ano.set(Calendar.YEAR, Integer.parseInt(t.getText()));
 			} catch (Exception e) {
-				c = "Ano inválido. Ex:2015";
+				c = "Ano inválido!";
 				r = false;
 			}
 

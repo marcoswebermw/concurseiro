@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="conteudo" fx:id="apPrincipal" minHeight="-1.0" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="br.mw.conc.view.ResolucaoController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <AnchorPane fx:id="apConteudo" prefHeight="721.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
+      <children>
+        <TextArea fx:id="taPergunta" disable="true" editable="false" layoutX="56.0" layoutY="29.0" prefHeight="97.0" prefWidth="941.0" wrapText="true" />
+        <TextArea fx:id="taRespostaA" disable="true" editable="false" layoutX="56.0" layoutY="146.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <TextArea fx:id="taRespostaB" disable="true" editable="false" layoutX="56.0" layoutY="226.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <TextArea fx:id="taRespostaC" disable="true" editable="false" layoutX="56.0" layoutY="306.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <TextArea fx:id="taRespostaD" disable="true" editable="false" layoutX="56.0" layoutY="386.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <TextArea id="taRespostaD" fx:id="taRespostaE" disable="true" editable="false" layoutX="56.0" layoutY="466.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <TextArea id="taRespostaD" fx:id="taObservacoes" disable="true" editable="false" layoutX="56.0" layoutY="565.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
+        <Group id="Group" layoutX="61.0" layoutY="671.0">
+          <children>
+            <Button fx:id="btnA" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="A" />
+            <Button id="btnA" fx:id="btnB" layoutX="130.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="B" />
+            <Button id="btnA" fx:id="btnC" layoutX="260.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="C" />
+            <Button id="btnA" fx:id="btnD" layoutX="390.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="D" />
+            <Button id="btnA" fx:id="btnE" layoutX="520.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="E" />
+          </children>
+        </Group>
+        <Hyperlink fx:id="linkAvancar" layoutX="904.0" layoutY="685.0" text="AVANÇAR" />
+        <HBox id="HBox" alignment="CENTER" layoutX="61.0" layoutY="8.0" spacing="5.0">
+          <children>
+            <Label fx:id="lblCod" text="Cod.: ">
+              <textFill>
+                <Color blue="0.750" green="0.750" red="0.750" fx:id="x1" />
+              </textFill>
+              <HBox.margin>
+                <Insets />
+              </HBox.margin>
+            </Label>
+            <Label text="\\" />
+            <Label id="Banca" fx:id="lblBanca" text="Banca" textFill="$x1" />
+            <Label text="\\" />
+            <Label fx:id="lblAno" text="Ano" textFill="$x1" />
+            <Label text="\\" />
+            <Label fx:id="lblCategoria" text="Categoria" textFill="$x1" />
+            <Label text="\\" />
+            <Label id="lblCategoria" fx:id="lblProva" text="Prova" textFill="$x1" />
+          </children>
+        </HBox>
+        <Label fx:id="lblA" layoutX="15.0" layoutY="156.0" text="A" textFill="#3385ff">
+          <font>
+            <Font name="System Bold" size="40.0" fx:id="x2" />
+          </font>
+        </Label>
+        <Label fx:id="lblB" font="$x2" layoutX="15.0" layoutY="236.0" text="B">
+          <textFill>
+            <Color blue="1.000" green="0.522" red="0.200" fx:id="x3" />
+          </textFill>
+        </Label>
+        <Label fx:id="lblC" font="$x2" layoutX="15.0" layoutY="316.0" text="C" textFill="$x3" />
+        <Label fx:id="lblD" font="$x2" layoutX="15.0" layoutY="397.0" text="D" textFill="$x3" />
+        <Label fx:id="lblE" font="$x2" layoutX="15.0" layoutY="477.0" text="E" textFill="$x3" />
+        <Label layoutX="61.0" layoutY="648.0" text="Resposta:" />
+        <Label layoutX="61.0" layoutY="549.0" text="Observaçoes" textFill="#cc3100" />
+        <Line endX="520.0" fill="RED" layoutX="472.0" layoutY="-10.0" smooth="true" startX="-100.0" stroke="$x1" strokeDashOffset="0.0" strokeWidth="2.9" />
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="apCabecalho" disable="true" focusTraversable="false" prefHeight="47.0" prefWidth="1024.0" AnchorPane.bottomAnchor="721.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <HBox id="HBox" alignment="CENTER" layoutX="397.0" layoutY="11.0" spacing="40.0">
+      <children>
+        <Label fx:id="lblNumQuestoes" text="Questoes: 1/60" textFill="#0083cc">
+          <effect>
+            <Glow fx:id="x4" />
+          </effect>
+          <font>
+            <Font name="System Bold" size="13.0" fx:id="x5" />
+          </font>
+        </Label>
+        <Label fx:id="lblAcertos" effect="$x4" font="$x5" text="Acertos: 1" textFill="#41cc00" />
+        <Label fx:id="lblErros" effect="$x4" font="$x5" text="Erros: 0" textFill="RED" />
+        <Label fx:id="lblUsuario" effect="$x4" font="$x5" text="Marcos Weber  Alves" textFill="$x1" />
+        <Hyperlink fx:id="linkSair" font="$x5" text="Sair" textAlignment="LEFT" textFill="#008799" underline="true" visited="false">
+          <effect>
+            <Glow />
+          </effect>
+        </Hyperlink>
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

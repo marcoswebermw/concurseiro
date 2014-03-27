@@ -36,207 +36,107 @@ import br.mw.conc.util.ValidacaoFormulario;
 import com.sun.javafx.scene.control.Logging;
 
 public class GerenciarPerguntasController {
-	@FXML
-	// ResourceBundle that was given to the FXMLLoader
-	private ResourceBundle resources;
+    @FXML
+    private ResourceBundle resources;
 
-	@FXML
-	// URL location of the FXML file that was given to the FXMLLoader
-	private URL location;
+    @FXML
+    private URL location;
 
-	@FXML
-	// fx:id="btnDeletar"
-	private Button btnDeletar; // Value injected by FXMLLoader
+    @FXML
+    private Button btnDeletar;
 
-	@FXML
-	// fx:id="btnNova"
-	private Button btnNova; // Value injected by FXMLLoader
+    @FXML
+    private Button btnNova;
 
-	@FXML
-	// fx:id="btnSalvar"
-	private Button btnSalvar; // Value injected by FXMLLoader
+    @FXML
+    private Button btnSalver;
 
-	@FXML
-	// fx:id="detalhes"
-	private AnchorPane detalhes; // Value injected by FXMLLoader
+    @FXML
+    private Label lblAnoErro;
 
-	@FXML
-	// fx:id="grupoCabPergResp"
-	private Group grupoCabPergResp; // Value injected by FXMLLoader
+    @FXML
+    private Label lblBancaErro;
 
-	@FXML
-	// fx:id="grupoCabecalho"
-	private Group grupoCabecalho; // Value injected by FXMLLoader
+    @FXML
+    private Label lblCategoriaErro;
 
-	@FXML
-	// fx:id="grupoPerguntasRespostas"
-	private Group grupoPerguntasRespostas; // Value injected by FXMLLoader
+    @FXML
+    private Label lblMensagem;
 
-	@FXML
-	// fx:id="hboxBotoes"
-	private HBox hboxBotoes; // Value injected by FXMLLoader
+    @FXML
+    private Label lblPerguntaErro;
 
-	@FXML
-	// fx:id="lblAno"
-	private Label lblAno; // Value injected by FXMLLoader
+    @FXML
+    private Label lblProvaErro;
 
-	@FXML
-	// fx:id="lblBanca"
-	private Label lblBanca; // Value injected by FXMLLoader
+    @FXML
+    private Label lblRespostaAErro;
 
-	@FXML
-	// fx:id="lblCategoria"
-	private Label lblCategoria; // Value injected by FXMLLoader
+    @FXML
+    private Label lblRespostaBErro;
 
-	@FXML
-	// fx:id="lblCod"
-	private Label lblCod; // Value injected by FXMLLoader
+    @FXML
+    private Label lblRespostaCertaErro;
 
-	@FXML
-	// fx:id="lblObservacoes"
-	private Label lblObservacoes; // Value injected by FXMLLoader
+    @FXML
+    private TableView<PerguntaProperty> perguntas;
 
-	@FXML
-	// fx:id="lblPergunta"
-	private Label lblPergunta; // Value injected by FXMLLoader
+    @FXML
+    private RadioButton rbRespostaA;
 
-	@FXML
-	// fx:id="lblRespostaA"
-	private Label lblRespostaA; // Value injected by FXMLLoader
+    @FXML
+    private RadioButton rbRespostaB;
 
-	@FXML
-	// fx:id="lblRespostaB"
-	private Label lblRespostaB; // Value injected by FXMLLoader
+    @FXML
+    private RadioButton rbRespostaC;
 
-	@FXML
-	// fx:id="lblRespostaC"
-	private Label lblRespostaC; // Value injected by FXMLLoader
+    @FXML
+    private RadioButton rbRespostaD;
 
-	@FXML
-	// fx:id="lblRespostaD"
-	private Label lblRespostaD; // Value injected by FXMLLoader
+    @FXML
+    private RadioButton rbRespostaE;
 
-	@FXML
-	// fx:id="lblRespostaE"
-	private Label lblRespostaE; // Value injected by FXMLLoader
+    @FXML
+    private ToggleGroup respostaCorreta;
 
-	@FXML
-	// fx:id="lblCategoriaErro"
-	private Label lblCategoriaErro;
+    @FXML
+    private TextArea taObservacoes;
 
-	@FXML
-	// fx:id="lblBancaErro"
-	private Label lblBancaErro;
+    @FXML
+    private TextArea taPergunta;
 
-	@FXML
-	// fx:id="lblAnoErro"
-	private Label lblAnoErro;
+    @FXML
+    private TextArea taRespostaA;
 
-	@FXML
-	// fx:id="lblPerguntaErro"
-	private Label lblPerguntaErro;
+    @FXML
+    private TextArea taRespostaB;
 
-	@FXML
-	// fx:id="lblRespostaAErro"
-	private Label lblRespostaAErro;
+    @FXML
+    private TextArea taRespostaC;
 
-	@FXML
-	// fx:id="lblRespostaBErro"
-	private Label lblRespostaBErro;
+    @FXML
+    private TextArea taRespostaD;
 
-	@FXML
-	// fx:id="lblRespostaCErro"
-	private Label lblRespostaCErro;
+    @FXML
+    private TextArea taRespostaE;
 
-	@FXML
-	// fx:id="lblRespostaDErro"
-	private Label lblRespostaDErro;
+    @FXML
+    private TextField tfAno;
 
-	@FXML
-	// fx:id="lblRespostaEErro"
-	private Label lblRespostaEErro;
+    @FXML
+    private TextField tfBanca;
 
-	@FXML
-	// fx:id="lblRespostaCertaErro"
-	private Label lblRespostaCertaErro;
+    @FXML
+    private TextField tfCategoria;
 
-	@FXML
-	// fx:id="lblMensagem"
-	private Label lblMensagem;
+    @FXML
+    private TextField tfCod;
 
-	@FXML
-	// fx:id="perguntas"
-	private TableView<PerguntaProperty> perguntas; // Value injected by
-													// FXMLLoader
-
-	@FXML
-	// fx:id="rbRespostaA"
-	private RadioButton rbRespostaA; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="rbRespostaB"
-	private RadioButton rbRespostaB; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="rbRespostaC"
-	private RadioButton rbRespostaC; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="rbRespostaD"
-	private RadioButton rbRespostaD; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="rbRespostaE"
-	private RadioButton rbRespostaE; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="respostaCorreta"
-	private ToggleGroup respostaCorreta; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taObservacoes"
-	private TextArea taObservacoes; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taPergunta"
-	private TextArea taPergunta; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taRespostaA"
-	private TextArea taRespostaA; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taRespostaB"
-	private TextArea taRespostaB; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taRespostaC"
-	private TextArea taRespostaC; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taRespostaD"
-	private TextArea taRespostaD; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="taRespostaE"
-	private TextArea taRespostaE; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="tfAno"
-	private TextField tfAno; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="tfBanca"
-	private TextField tfBanca; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="tfCategoria"
-	private TextField tfCategoria; // Value injected by FXMLLoader
-
-	@FXML
-	// fx:id="tfCod"
-	private TextField tfCod; // Value injected by FXMLLoader
-
+    @FXML
+    private TextField tfProva;
+	
+	
+	
 	// Handler for Button[fx:id="btnNova"] onAction
 	@FXML
 	void novaPergunta(ActionEvent event) {
@@ -250,31 +150,36 @@ public class GerenciarPerguntasController {
 	@FXML
 	void salvarPergunta(ActionEvent event) {
 		boolean categoriaErro = ValidacaoFormulario.campoPreenchido(
-				tfCategoria, lblCategoriaErro, "Preencha a categoria!");
+				tfCategoria, lblCategoriaErro, "*Informe a categoria!");
 		boolean bancaErro = ValidacaoFormulario.campoPreenchido(tfBanca,
-				lblBancaErro, "Preencha a banca!");
-		boolean anoErro = ValidacaoFormulario.campoAnoPreenchidoCorretamente(tfAno,
-				lblAnoErro, "Preencha o ano!");
+				lblBancaErro, "*Informe a banca!");
+		boolean anoErro = ValidacaoFormulario.campoAnoPreenchidoCorretamente(
+				tfAno, lblAnoErro, "*Informe o ano!");
 		boolean perguntaErro = ValidacaoFormulario.campoPreenchido(taPergunta,
-				lblPerguntaErro, "Preencha a pergunta!");
-		boolean respostaAErro = ValidacaoFormulario.campoPreenchido(
-				taRespostaA, lblRespostaAErro, "Preencha a resposta A!");
-		boolean respostaBErro = ValidacaoFormulario.campoPreenchido(
-				taRespostaB, lblRespostaBErro, "Preencha a resposta B!");
-		boolean respostaCErro = ValidacaoFormulario.campoPreenchido(
-				taRespostaC, lblRespostaCErro, "Preencha a resposta C!");
-		boolean respostaDErro = ValidacaoFormulario.campoPreenchido(
-				taRespostaD, lblRespostaDErro, "Preencha a resposta D!");
-		boolean respostaEErro = ValidacaoFormulario.campoPreenchido(
-				taRespostaE, lblRespostaEErro, "Preencha a resposta E!");
+				lblPerguntaErro, "*Informe a pergunta!");
+		boolean provaErro = ValidacaoFormulario.campoPreenchido(taPergunta,
+				lblProvaErro, "*Informe a prova!");
+		// Existem questões com apenas opção de verdadeiro e falso.
+		 boolean respostaAErro = ValidacaoFormulario.campoPreenchido(
+		 taRespostaA, lblRespostaAErro, "*Informe obrigatoriamente a resposta A!");
+		 boolean respostaBErro = ValidacaoFormulario.campoPreenchido(
+		 taRespostaB, lblRespostaBErro, "*Informe obrigatoriamente a resposta B!");
+		// boolean respostaCErro = ValidacaoFormulario.campoPreenchido(
+		// taRespostaC, lblRespostaCErro, "Preencha a resposta C!");
+		// boolean respostaDErro = ValidacaoFormulario.campoPreenchido(
+		// taRespostaD, lblRespostaDErro, "Preencha a resposta D!");
+		// boolean respostaEErro = ValidacaoFormulario.campoPreenchido(
+		// taRespostaE, lblRespostaEErro, "Preencha a resposta E!");
 		boolean respostaCertaErro = ValidacaoFormulario.respostaMarcada(
-				respostaCorreta, lblRespostaCertaErro, "Marque uma resposta!");
+				respostaCorreta, lblRespostaCertaErro, "*Marque a resposta correta!");
 
 		// Validando Campos, Salvando ou Alterando Pergunta e Suas Respostas.
 		String msg = null;
+		// if (categoriaErro && bancaErro && anoErro && perguntaErro &&
+		// respostaAErro && respostaBErro && respostaCErro && respostaDErro &&
+		// respostaEErro && respostaCertaErro) {
 		if (categoriaErro && bancaErro && anoErro && perguntaErro
-				&& respostaAErro && respostaBErro && respostaCErro
-				&& respostaDErro && respostaEErro && respostaCertaErro) {
+				&& respostaAErro && respostaBErro && respostaCertaErro && provaErro) {
 			if (tfCod.equals(null) || tfCod.getText().equals("".trim())) {
 				salvarDados();
 				msg = "Pergunta salva corretamente!";
@@ -301,17 +206,17 @@ public class GerenciarPerguntasController {
 
 		long cod = perguntas.getSelectionModel().getSelectedItem().getCod();
 		Pergunta perguntaSelecionada = new PerguntaController().buscar(cod);
-//		List<Resposta> respostasDoBD = new RespostaController().listar();
+		// List<Resposta> respostasDoBD = new RespostaController().listar();
 
 		// Deletar Pergunta.
 		new PerguntaController().deletar(perguntaSelecionada);
-		
+
 		// Deletar Respostas Relacionadas à Pergunta.
 		List<Resposta> respostasDoBD = perguntaSelecionada.getRespostas();
 		for (Resposta r : respostasDoBD) {
-				new RespostaController().deletar(r);
-		}		
-		
+			new RespostaController().deletar(r);
+		}
+
 		limparControles();
 		AuxiliarTela.carregarTabelaPerguntas(tfCod, perguntas);
 		mostrarOcultarControles();
@@ -341,43 +246,39 @@ public class GerenciarPerguntasController {
 	@FXML
 	// This method is called by the FXMLLoader when initialization is complete
 	void initialize() {
-		assert btnDeletar != null : "fx:id=\"btnDeletar\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert btnNova != null : "fx:id=\"btnNova\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert btnSalvar != null : "fx:id=\"btnSalvar\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert detalhes != null : "fx:id=\"detalhes\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert grupoCabPergResp != null : "fx:id=\"grupoCabPergResp\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert grupoCabecalho != null : "fx:id=\"grupoCabecalho\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert grupoPerguntasRespostas != null : "fx:id=\"grupoPerguntasRespostas\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert hboxBotoes != null : "fx:id=\"hboxBotoes\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblAno != null : "fx:id=\"lblAno\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblBanca != null : "fx:id=\"lblBanca\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblCategoria != null : "fx:id=\"lblCategoria\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblCod != null : "fx:id=\"lblCod\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblObservacoes != null : "fx:id=\"lblObservacoes\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblPergunta != null : "fx:id=\"lblPergunta\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblRespostaA != null : "fx:id=\"lblRespostaA\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblRespostaB != null : "fx:id=\"lblRespostaB\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblRespostaC != null : "fx:id=\"lblRespostaC\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblRespostaD != null : "fx:id=\"lblRespostaD\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert lblRespostaE != null : "fx:id=\"lblRespostaE\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert perguntas != null : "fx:id=\"perguntas\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert rbRespostaA != null : "fx:id=\"rbRespostaA\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert rbRespostaB != null : "fx:id=\"rbRespostaB\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert rbRespostaC != null : "fx:id=\"rbRespostaC\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert rbRespostaD != null : "fx:id=\"rbRespostaD\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert rbRespostaE != null : "fx:id=\"rbRespostaE\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert respostaCorreta != null : "fx:id=\"respostaCorreta\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taObservacoes != null : "fx:id=\"taObservacoes\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taPergunta != null : "fx:id=\"taPergunta\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taRespostaA != null : "fx:id=\"taRespostaA\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taRespostaB != null : "fx:id=\"taRespostaB\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taRespostaC != null : "fx:id=\"taRespostaC\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taRespostaD != null : "fx:id=\"taRespostaD\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert taRespostaE != null : "fx:id=\"taRespostaE\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert tfAno != null : "fx:id=\"tfAno\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert tfBanca != null : "fx:id=\"tfBanca\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert tfCategoria != null : "fx:id=\"tfCategoria\" was not injected: check your FXML file 'cadastro.fxml'.";
-		assert tfCod != null : "fx:id=\"tfCod\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert btnDeletar != null : "fx:id=\"btnDeletar\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert btnNova != null : "fx:id=\"btnNova\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert btnSalver != null : "fx:id=\"btnSalver\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblAnoErro != null : "fx:id=\"lblAnoErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblBancaErro != null : "fx:id=\"lblBancaErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblCategoriaErro != null : "fx:id=\"lblCategoriaErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblMensagem != null : "fx:id=\"lblMensagem\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblPerguntaErro != null : "fx:id=\"lblPerguntaErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblProvaErro != null : "fx:id=\"lblProvaErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblRespostaAErro != null : "fx:id=\"lblRespostaAErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblRespostaBErro != null : "fx:id=\"lblRespostaBErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert lblRespostaCertaErro != null : "fx:id=\"lblRespostaCertaErro\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert perguntas != null : "fx:id=\"perguntas\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert rbRespostaA != null : "fx:id=\"rbRespostaA\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert rbRespostaB != null : "fx:id=\"rbRespostaB\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert rbRespostaC != null : "fx:id=\"rbRespostaC\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert rbRespostaD != null : "fx:id=\"rbRespostaD\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert rbRespostaE != null : "fx:id=\"rbRespostaE\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert respostaCorreta != null : "fx:id=\"respostaCorreta\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taObservacoes != null : "fx:id=\"taObservacoes\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taPergunta != null : "fx:id=\"taPergunta\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taRespostaA != null : "fx:id=\"taRespostaA\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taRespostaB != null : "fx:id=\"taRespostaB\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taRespostaC != null : "fx:id=\"taRespostaC\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taRespostaD != null : "fx:id=\"taRespostaD\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert taRespostaE != null : "fx:id=\"taRespostaE\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert tfAno != null : "fx:id=\"tfAno\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert tfBanca != null : "fx:id=\"tfBanca\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert tfCategoria != null : "fx:id=\"tfCategoria\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert tfCod != null : "fx:id=\"tfCod\" was not injected: check your FXML file 'cadastro.fxml'.";
+        assert tfProva != null : "fx:id=\"tfProva\" was not injected: check your FXML file 'cadastro.fxml'.";
+
+
 
 		// Initialize your logic here: all @FXML variables will have been
 		// injected
@@ -395,10 +296,11 @@ public class GerenciarPerguntasController {
 	}
 
 	private void limparCampos() {
-		tfAno.clear();
-		tfBanca.clear();
-		tfCategoria.clear();
 		tfCod.clear();
+		tfCategoria.clear();
+		tfBanca.clear();
+		tfProva.clear();
+		tfAno.clear();
 		taObservacoes.clear();
 		taPergunta.clear();
 		taRespostaA.clear();
@@ -413,13 +315,11 @@ public class GerenciarPerguntasController {
 	private void limparLabelsErro() {
 		lblCategoriaErro.setText("");
 		lblBancaErro.setText("");
+		lblProvaErro.setText("");
 		lblAnoErro.setText("");
 		lblPerguntaErro.setText("");
 		lblRespostaAErro.setText("");
 		lblRespostaBErro.setText("");
-		lblRespostaCErro.setText("");
-		lblRespostaDErro.setText("");
-		lblRespostaEErro.setText("");
 		lblRespostaCertaErro.setText("");
 		Logging.getControlsLogger().info(
 				"Executou Método ->  limparLabelsErro()");
@@ -449,9 +349,10 @@ public class GerenciarPerguntasController {
 		Resposta respostaC = new Resposta();
 		Resposta respostaD = new Resposta();
 		Resposta respostaE = new Resposta();
-		
+
 		// Definido os valores para as respostas da pergunta.
-		List<Resposta> respostasDoBD = new PerguntaController().buscar(pergunta.getCod()).getRespostas();
+		List<Resposta> respostasDoBD = new PerguntaController().buscar(
+				pergunta.getCod()).getRespostas();
 		respostaA = respostasDoBD.get(0);
 		respostaB = respostasDoBD.get(1);
 		respostaC = respostasDoBD.get(2);
@@ -462,7 +363,7 @@ public class GerenciarPerguntasController {
 		respostaC.setTexto(taRespostaC.getText());
 		respostaD.setTexto(taRespostaD.getText());
 		respostaE.setTexto(taRespostaE.getText());
-		
+
 		// Adicionando as respostas à pergunta.
 		List<Resposta> lresp = new ArrayList<Resposta>();
 		lresp.add(respostaA);
@@ -471,7 +372,7 @@ public class GerenciarPerguntasController {
 		lresp.add(respostaD);
 		lresp.add(respostaE);
 		pergunta.setRespostas(lresp);
-		
+
 		// Pegando a resposta correta.
 		RadioButton rbSel = (RadioButton) respostaCorreta.getSelectedToggle();
 
@@ -507,7 +408,7 @@ public class GerenciarPerguntasController {
 		Resposta respostaC = new Resposta();
 		Resposta respostaD = new Resposta();
 		Resposta respostaE = new Resposta();
-		
+
 		List<Resposta> lresp = new ArrayList<Resposta>();
 		lresp.add(respostaA);
 		lresp.add(respostaB);
@@ -552,9 +453,10 @@ public class GerenciarPerguntasController {
 	private void mostrarPerguntaDaTabela(Pergunta perguntaSelecionada, long cod) {
 		limparLabelsErro();
 		tfCod.setText("" + cod);
-		tfAno.setText("" + perguntaSelecionada.getAno());
-		tfBanca.setText(perguntaSelecionada.getBanca());
 		tfCategoria.setText(perguntaSelecionada.getCategoria());
+		tfBanca.setText(perguntaSelecionada.getBanca());
+		tfProva.setText(perguntaSelecionada.getProva());
+		tfAno.setText("" + perguntaSelecionada.getAno());
 		taPergunta.setText(perguntaSelecionada.getTexto());
 		taObservacoes.setText(perguntaSelecionada.getObservacao());
 	}

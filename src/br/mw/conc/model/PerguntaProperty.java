@@ -8,19 +8,20 @@ public class PerguntaProperty {
 	private SimpleStringProperty texto;
 	private SimpleStringProperty categoria;
 	private SimpleStringProperty banca;
-	private SimpleStringProperty observacao;
+	private SimpleStringProperty prova;
 	private SimpleLongProperty ano;
-	private SimpleLongProperty perguntaCerta;
+	private SimpleStringProperty observacao;
+	private SimpleLongProperty respostaCerta;
 
-	public PerguntaProperty(Long cod, String texto, String categoria,
-			String banca, String observacao, long ano, long perguntaCerta) {
+	public PerguntaProperty(Long cod, String texto, String categoria, String banca, String prova, String observacao, long ano, long respostaCerta) {
 		this.cod = new SimpleLongProperty(cod);
 		this.texto = new SimpleStringProperty(texto);
 		this.categoria = new SimpleStringProperty(categoria);
 		this.banca = new SimpleStringProperty(banca);
-		this.observacao = new SimpleStringProperty(observacao);
+		this.prova = new SimpleStringProperty(prova);
 		this.ano = new SimpleLongProperty(ano);
-		this.perguntaCerta = new SimpleLongProperty(perguntaCerta);
+		this.observacao = new SimpleStringProperty(observacao);
+		this.respostaCerta = new SimpleLongProperty(respostaCerta);
 	}
 
 	public long getCod() {
@@ -39,6 +40,10 @@ public class PerguntaProperty {
 		return banca.get();
 	}
 
+	public String getProva() {
+		return prova.get();
+	}	
+	
 	public String getObservacao() {
 		return observacao.get();
 	}
@@ -48,7 +53,7 @@ public class PerguntaProperty {
 	}
 
 	public long getPerguntaCerta() {
-		return perguntaCerta.get();
+		return respostaCerta.get();
 	}
 	
 	

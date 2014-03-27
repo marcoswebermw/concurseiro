@@ -50,8 +50,9 @@ public class AuxiliarTela {
 		TableColumn columnCod = p.getColumns().get(0);
 		TableColumn columnCategoria = p.getColumns().get(1);
 		TableColumn columnBanca = p.getColumns().get(2);
-		TableColumn columnAno = p.getColumns().get(3);
-		TableColumn columnPergunta = p.getColumns().get(4);
+		TableColumn columnProva = p.getColumns().get(3);
+		TableColumn columnAno = p.getColumns().get(4);
+		TableColumn columnPergunta = p.getColumns().get(5);
 
 		columnCod
 				.setCellValueFactory(new PropertyValueFactory<PerguntaProperty, Long>(
@@ -62,6 +63,9 @@ public class AuxiliarTela {
 		columnBanca
 				.setCellValueFactory(new PropertyValueFactory<PerguntaProperty, String>(
 						"banca"));
+		columnProva
+		.setCellValueFactory(new PropertyValueFactory<PerguntaProperty, String>(
+				"prova"));		
 		columnAno
 				.setCellValueFactory(new PropertyValueFactory<PerguntaProperty, Long>(
 						"ano"));
@@ -80,7 +84,8 @@ public class AuxiliarTela {
 		for (Pergunta p : perguntasDoBD) {
 			PerguntaProperty perguntaProperty = new PerguntaProperty(
 					p.getCod(), p.getTexto(), p.getCategoria(), p.getBanca(),
-					p.getObservacao(), p.getAno(), p.getRespostaCerta());
+					p.getProva(), p.getObservacao(), p.getAno(),
+					p.getRespostaCerta());
 			listaObservavelPerguntas.add(perguntaProperty);
 		}
 
