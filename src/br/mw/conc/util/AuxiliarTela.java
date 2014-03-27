@@ -48,10 +48,10 @@ public class AuxiliarTela {
 	// Define os valores das colunas de uma tabela.
 	public static void montarTabela(TableView<PerguntaProperty> p) {
 		TableColumn columnCod = p.getColumns().get(0);
-		TableColumn columnCategoria = p.getColumns().get(1);
-		TableColumn columnBanca = p.getColumns().get(2);
-		TableColumn columnProva = p.getColumns().get(3);
-		TableColumn columnAno = p.getColumns().get(4);
+		TableColumn columnAno = p.getColumns().get(1);
+		TableColumn columnCategoria = p.getColumns().get(2);
+		TableColumn columnBanca = p.getColumns().get(3);
+		TableColumn columnProva = p.getColumns().get(4);
 		TableColumn columnPergunta = p.getColumns().get(5);
 
 		columnCod

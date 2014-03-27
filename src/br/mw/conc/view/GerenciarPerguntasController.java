@@ -336,9 +336,10 @@ public class GerenciarPerguntasController {
 		// Diferentemente do salvar, aqui o cod é definido.
 		Pergunta pergunta = new Pergunta();
 		pergunta.setCod(Long.parseLong(tfCod.getText()));
-		pergunta.setAno(Long.parseLong(tfAno.getText()));
-		pergunta.setBanca(tfBanca.getText());
 		pergunta.setCategoria(tfCategoria.getText());
+		pergunta.setBanca(tfBanca.getText());
+		pergunta.setProva(tfProva.getText());
+		pergunta.setAno(Long.parseLong(tfAno.getText()));
 		pergunta.setTexto(taPergunta.getText());
 		pergunta.setObservacao(taObservacoes.getText());
 		pergunta.setRespostaCerta(-1); // -1 é um valor arbitrário para mostrar
@@ -396,9 +397,10 @@ public class GerenciarPerguntasController {
 	private void salvarDados() {
 		// Definindo os valores da pergunta.
 		Pergunta pergunta = new Pergunta();
-		pergunta.setAno(Long.parseLong(tfAno.getText()));
-		pergunta.setBanca(tfBanca.getText());
 		pergunta.setCategoria(tfCategoria.getText());
+		pergunta.setBanca(tfBanca.getText());
+		pergunta.setProva(tfProva.getText());
+		pergunta.setAno(Long.parseLong(tfAno.getText()));
 		pergunta.setTexto(taPergunta.getText());
 		pergunta.setObservacao(taObservacoes.getText());
 		pergunta.setRespostaCerta(-1);

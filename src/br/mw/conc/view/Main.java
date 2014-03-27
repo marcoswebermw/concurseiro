@@ -19,6 +19,7 @@ public class Main extends Application {
 			//Iniciando o JPA.
 			FabricaEntityManager.obtemEntityManager();
 			URL arquivoFXML = getClass().getResource("./cadastro.fxml");
+//			URL arquivoFXML = getClass().getResource("./resolucao.fxml");
 			Parent fxmlParent = (Parent) FXMLLoader.load(arquivoFXML);
 			palco.setScene(new Scene(fxmlParent));
 			palco.setTitle("Concurseiro");
