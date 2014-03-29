@@ -16,23 +16,14 @@
   <children>
     <AnchorPane fx:id="apConteudo" prefHeight="721.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="47.0">
       <children>
-        <TextArea fx:id="taPergunta" disable="true" editable="false" layoutX="56.0" layoutY="29.0" prefHeight="97.0" prefWidth="941.0" wrapText="true" />
-        <TextArea fx:id="taRespostaA" disable="true" editable="false" layoutX="56.0" layoutY="146.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <TextArea fx:id="taRespostaB" disable="true" editable="false" layoutX="56.0" layoutY="226.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <TextArea fx:id="taRespostaC" disable="true" editable="false" layoutX="56.0" layoutY="306.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <TextArea fx:id="taRespostaD" disable="true" editable="false" layoutX="56.0" layoutY="386.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <TextArea id="taRespostaD" fx:id="taRespostaE" disable="true" editable="false" layoutX="56.0" layoutY="466.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <TextArea id="taRespostaD" fx:id="taObservacoes" disable="true" editable="false" layoutX="56.0" layoutY="565.0" prefHeight="69.0" prefWidth="941.0" wrapText="true" />
-        <Group id="Group" layoutX="61.0" layoutY="671.0">
-          <children>
-            <Button fx:id="btnA" layoutX="0.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="A" />
-            <Button id="btnA" fx:id="btnB" layoutX="130.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="B" />
-            <Button id="btnA" fx:id="btnC" layoutX="260.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="C" />
-            <Button id="btnA" fx:id="btnD" layoutX="390.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="D" />
-            <Button id="btnA" fx:id="btnE" layoutX="520.0" layoutY="0.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="121.0" text="E" />
-          </children>
-        </Group>
-        <Hyperlink fx:id="linkAvancar" layoutX="904.0" layoutY="685.0" text="AVANÇAR" />
+        <TextArea fx:id="taPergunta" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="29.0" prefHeight="97.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea fx:id="taRespostaA" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="146.0" prefHeight="69.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea fx:id="taRespostaB" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="226.0" prefHeight="69.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea fx:id="taRespostaC" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="306.0" prefHeight="69.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea fx:id="taRespostaD" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="386.0" prefHeight="69.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea id="taRespostaD" fx:id="taRespostaE" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="466.0" prefHeight="69.0" prefWidth="941.0" visible="true" wrapText="true" />
+        <TextArea id="taRespostaD" fx:id="taObservacoes" disable="false" editable="false" focusTraversable="false" layoutX="56.0" layoutY="565.0" prefHeight="97.0" prefWidth="941.0" visible="false" wrapText="true" />
+        <Hyperlink fx:id="linkAvancar" layoutX="927.0" layoutY="674.0" onAction="#avancarPergunta" text="AVANÇAR" visible="false" />
         <HBox id="HBox" alignment="CENTER" layoutX="61.0" layoutY="8.0" spacing="5.0">
           <children>
             <Label fx:id="lblCod" text="Cod.: ">
@@ -53,21 +44,27 @@
             <Label id="lblCategoria" fx:id="lblProva" text="Prova" textFill="$x1" />
           </children>
         </HBox>
-        <Label fx:id="lblA" layoutX="15.0" layoutY="156.0" text="A" textFill="#3385ff">
-          <font>
-            <Font name="System Bold" size="40.0" fx:id="x2" />
-          </font>
-        </Label>
-        <Label fx:id="lblB" font="$x2" layoutX="15.0" layoutY="236.0" text="B">
-          <textFill>
-            <Color blue="1.000" green="0.522" red="0.200" fx:id="x3" />
-          </textFill>
-        </Label>
-        <Label fx:id="lblC" font="$x2" layoutX="15.0" layoutY="316.0" text="C" textFill="$x3" />
-        <Label fx:id="lblD" font="$x2" layoutX="15.0" layoutY="397.0" text="D" textFill="$x3" />
-        <Label fx:id="lblE" font="$x2" layoutX="15.0" layoutY="477.0" text="E" textFill="$x3" />
-        <Label layoutX="61.0" layoutY="648.0" text="Resposta:" />
-        <Label layoutX="61.0" layoutY="549.0" text="Observaçoes" textFill="#cc3100" />
+        <VBox id="VBox" fx:id="vboxLetras" alignment="CENTER" layoutX="3.0" layoutY="148.0" spacing="19.0">
+          <children>
+            <Hyperlink fx:id="linkA" focusTraversable="false" onAction="#respostaA" text="A" textFill="#3385ff">
+              <effect>
+                <DropShadow fx:id="x6" />
+              </effect>
+              <font>
+                <Font name="System Bold" size="40.0" fx:id="x2" />
+              </font>
+            </Hyperlink>
+            <Hyperlink fx:id="linkB" effect="$x6" focusTraversable="false" font="$x2" onAction="#respostaB" text="B">
+              <textFill>
+                <Color blue="1.000" green="0.522" red="0.200" fx:id="x3" />
+              </textFill>
+            </Hyperlink>
+            <Hyperlink fx:id="linkC" effect="$x6" focusTraversable="false" font="$x2" onAction="#respostaC" text="C" textFill="$x3" />
+            <Hyperlink fx:id="linkD" effect="$x6" focusTraversable="false" font="$x2" onAction="#respostaD" text="D" textFill="$x3" />
+            <Hyperlink fx:id="linkE" effect="$x6" focusTraversable="false" font="$x2" onAction="#respostaE" text="E" textFill="$x3" />
+          </children>
+        </VBox>
+        <Label fx:id="lblObservacoes" layoutX="61.0" layoutY="549.0" text="Observaçoes" textFill="#cc3100" visible="false" />
         <Line endX="520.0" fill="RED" layoutX="472.0" layoutY="-10.0" smooth="true" startX="-100.0" stroke="$x1" strokeDashOffset="0.0" strokeWidth="2.9" />
       </children>
     </AnchorPane>
