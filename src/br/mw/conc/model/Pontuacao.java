@@ -8,6 +8,8 @@ public class Pontuacao {
 	private int errou = 0;
 
 	private int indicePergunta = 0;
+	
+	private int totalPerguntas = 0;
 
 	public Pontuacao() {
 	}
@@ -44,7 +46,15 @@ public class Pontuacao {
 		this.indicePergunta++;
 	}
 
-	public int getNumQuestoes() {
+	public int getNumQuestoesFeitas() {
 		return this.acertou + this.errou;
+	}
+
+	public int getTotalPerguntas() {
+		return totalPerguntas;
+	}
+
+	public void setTotalPerguntas(int totalPerguntas) {
+		this.totalPerguntas = totalPerguntas;
 	}
 }

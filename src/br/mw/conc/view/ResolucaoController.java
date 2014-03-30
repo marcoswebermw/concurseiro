@@ -16,6 +16,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import br.mw.conc.controller.PerguntaController;
 import br.mw.conc.model.Pergunta;
+import br.mw.conc.model.Pontuacao;
 import br.mw.conc.model.Resposta;
 
 public class ResolucaoController {
@@ -136,12 +137,14 @@ public class ResolucaoController {
 
 	@FXML
 	private TextArea taRespostaE;
-	
+
 	@FXML
 	private VBox vboxLetras;
 
 	// Perguntas a serem respondidas
 	private List<Pergunta> perguntasDoBD;
+
+	private Pontuacao pontuacao;
 
 	@FXML
 	void initialize() {
@@ -193,9 +196,14 @@ public class ResolucaoController {
 		assert taRespostaD != null : "fx:id=\"taRespostaD\" was not injected: check your FXML file 'resolucao.fxml'.";
 		assert taRespostaE != null : "fx:id=\"taRespostaE\" was not injected: check your FXML file 'resolucao.fxml'.";
 
+		inicializar();
+	}
+
+	private void inicializar() {
 		carregarPerguntas();
 		mostrarOcultarObs();
 		exibirPergunta();
+		iniciarPontuação();		
 	}
 
 	@FXML
@@ -289,13 +297,31 @@ public class ResolucaoController {
 	}
 
 	private void errou() {
-
+		pontuacao.errou();
+		lblErros.setText("Erros: " + pontuacao.getErrou());
+		lblNumQuestoes.setText("Questões: " + pontuacao.getNumQuestoesFeitas()
+				+ "/" + pontuacao.getTotalPerguntas());
 		linkAvancar.setVisible(true);
 	}
 
 	private void acertou() {
-
+		pontuacao.acertou();
+		lblAcertos.setText("Acertos: " + pontuacao.getAcertou());
+		lblNumQuestoes.setText("Questões: " + pontuacao.getNumQuestoesFeitas()
+				+ "/" + pontuacao.getTotalPerguntas());		
 		linkAvancar.setVisible(true);
+	}
+
+	private void iniciarPontuação() {
+		pontuacao = new Pontuacao();
+		pontuacao.setNome("Fulano de Tal");
+		pontuacao.setTotalPerguntas(perguntasDoBD.size());
+		lblNumQuestoes.setText("Questões: " + pontuacao.getNumQuestoesFeitas()
+				+ "/" + pontuacao.getTotalPerguntas());
+		
+		lblAcertos.setText("Acertos: 0");
+		lblErros.setText("Erros: 0");
+		lblUsuario.setText(pontuacao.getNome());
 	}
 
 	private void mostrarOcultarObs() {
@@ -310,6 +336,7 @@ public class ResolucaoController {
 			lblObservacoes.setVisible(true);
 
 		}
+		linkAvancar.requestFocus();
 	}
 
 	// Voltar todos os labels de respostas a cor original.
@@ -375,12 +402,10 @@ public class ResolucaoController {
 		// Rótulos do cabeçalho da pergunta.
 		lblCod.setText("Cod.: "
 				+ String.valueOf(perguntasDoBD.get(topo).getCod()));
-		lblBanca.setText("Banca: " + perguntasDoBD.get(topo).getBanca());
-		lblAno.setText("Ano: "
-				+ String.valueOf(perguntasDoBD.get(topo).getAno()));
-		lblCategoria.setText("Categoria: "
-				+ perguntasDoBD.get(topo).getCategoria());
-		lblProva.setText("Prova: " + perguntasDoBD.get(topo).getProva());
+		lblBanca.setText(perguntasDoBD.get(topo).getBanca());
+		lblAno.setText(String.valueOf(perguntasDoBD.get(topo).getAno()));
+		lblCategoria.setText(perguntasDoBD.get(topo).getCategoria());
+		lblProva.setText(perguntasDoBD.get(topo).getProva());
 		// Campos.
 		taPergunta.setText(perguntasDoBD.get(topo).getTexto());
 		taRespostaA.setText(perguntasDoBD.get(topo).getRespostas().get(0)
