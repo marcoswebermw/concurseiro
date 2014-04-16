@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="br.mw.conc.view.PrincipalController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Button fx:id="btnRespQuestoes" layoutX="40.0" layoutY="40.0" mnemonicParsing="false" onAction="#getTelaQuestoes" prefHeight="50.0" prefWidth="300.0" text="Responder Questoes" />
+    <Button fx:id="btnGerenciarPergResp" layoutX="40.0" layoutY="110.0" mnemonicParsing="false" onAction="#getGerenciarPerguntasRespostas" prefHeight="50.0" prefWidth="300.0" text="Gerenciar Perguntas/Respostas" />
+    <Button fx:id="btnSair" layoutX="40.0" layoutY="179.0" mnemonicParsing="false" onAction="#getSair" prefHeight="50.0" prefWidth="300.0" text="Sair" />
+    <TextField fx:id="tfUsuario" layoutX="389.0" layoutY="40.0" prefHeight="35.0" prefWidth="374.0" />
+    <Label layoutX="392.0" layoutY="20.0" text="USUARIO" />
+    <ListView fx:id="lstvUsuarios" layoutX="391.0" layoutY="90.0" prefHeight="139.0" prefWidth="374.0" />
+    <Button fx:id="btnRemover" layoutX="549.0" layoutY="245.0" mnemonicParsing="false" onAction="#getRemover" prefHeight="30.0" prefWidth="100.0" text="Remover" />
+    <Button id="Adicionar" fx:id="btnAdicionar" layoutX="664.0" layoutY="245.0" mnemonicParsing="false" onAction="#getAdicionar" prefHeight="30.0" prefWidth="100.0" text="Adicionar" />
+    <Label fx:id="lblMensagem" layoutX="50.0" layoutY="357.0" text="Mensagem Aqui!" />
+  </children>
+</AnchorPane>
