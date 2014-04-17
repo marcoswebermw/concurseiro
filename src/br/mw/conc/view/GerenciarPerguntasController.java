@@ -33,7 +33,7 @@ import br.mw.conc.model.Resposta;
 import br.mw.conc.util.AuxiliarTela;
 import br.mw.conc.util.ValidacaoFormulario;
 
-import com.sun.javafx.scene.control.Logging;
+//import com.sun.javafx.scene.control.Logging;
 
 public class GerenciarPerguntasController {
     @FXML
@@ -143,7 +143,7 @@ public class GerenciarPerguntasController {
 		limparControles();
 		AuxiliarTela.carregarTabelaPerguntas(tfCod, perguntas);
 		mostrarOcultarControles();
-		Logging.getControlsLogger().info("Executou Método ->  novaPergunta()");
+//		Logging.getControlsLogger().info("Executou Metodo ->  novaPergunta()");
 	}
 
 	// Handler for Button[fx:id="btnSalvar"] onAction
@@ -193,8 +193,8 @@ public class GerenciarPerguntasController {
 			mostrarOcultarControles();
 		}
 		AuxiliarTela.mostrarMensagem(msg, lblMensagem);
-		Logging.getControlsLogger()
-				.info("Executou Método ->  salvarPergunta()");
+//		Logging.getControlsLogger()
+//				.info("Executou Método ->  salvarPergunta()");
 	}
 
 	// Handler for Button[fx:id="btnDeletar"] onAction
@@ -221,8 +221,8 @@ public class GerenciarPerguntasController {
 		AuxiliarTela.carregarTabelaPerguntas(tfCod, perguntas);
 		mostrarOcultarControles();
 		AuxiliarTela.mostrarMensagem(msg, lblMensagem);
-		Logging.getControlsLogger().info(
-				"Executou Método ->  deletarPergunta()");
+//		Logging.getControlsLogger().info(
+//				"Executou Método ->  deletarPergunta()");
 	}
 
 	@FXML
@@ -239,8 +239,8 @@ public class GerenciarPerguntasController {
 		mostrarRespostasDaTabela(perguntaSelecionada, respostasDoBD);
 		mostrarOcultarControles();
 
-		Logging.getControlsLogger().info(
-				"Executou Método ->  selecionarPerguntaTabela()");
+//		Logging.getControlsLogger().info(
+//				"Executou Método ->  selecionarPerguntaTabela()");
 	}
 
 	@FXML
@@ -291,8 +291,8 @@ public class GerenciarPerguntasController {
 		limparLabelsErro();
 		limparCampos();
 		tfCategoria.requestFocus();
-		Logging.getControlsLogger().info(
-				"Executou Método ->  limparControles()");
+//		Logging.getControlsLogger().info(
+//				"Executou Método ->  limparControles()");
 	}
 
 	private void limparCampos() {
@@ -309,7 +309,7 @@ public class GerenciarPerguntasController {
 		taRespostaD.clear();
 		taRespostaE.clear();
 		respostaCorreta.selectToggle(null);
-		Logging.getControlsLogger().info("Executou Método ->  limparCampos()");
+//		Logging.getControlsLogger().info("Executou Método ->  limparCampos()");
 	}
 
 	private void limparLabelsErro() {
@@ -321,14 +321,14 @@ public class GerenciarPerguntasController {
 		lblRespostaAErro.setText("");
 		lblRespostaBErro.setText("");
 		lblRespostaCertaErro.setText("");
-		Logging.getControlsLogger().info(
-				"Executou Método ->  limparLabelsErro()");
+//		Logging.getControlsLogger().info(
+//				"Executou Método ->  limparLabelsErro()");
 	}
 
 	private void mostrarOcultarControles() {
 		AuxiliarTela.mostrarOcultarControles(perguntas, btnDeletar);
-		Logging.getControlsLogger().info(
-				"Executou Método ->  mostrarOcultarControles()");
+//		Logging.getControlsLogger().info(
+//				"Executou Método ->  mostrarOcultarControles()");
 	}
 
 	private void alterarDados() {
@@ -391,7 +391,7 @@ public class GerenciarPerguntasController {
 
 		pergunta.setRespostaCerta(codRespostaCerta);
 		new PerguntaController().atualizar(pergunta);
-		Logging.getControlsLogger().info("Executou Método ->  alterarDados()");
+//		Logging.getControlsLogger().info("Executou Método ->  alterarDados()");
 	}
 
 	private void salvarDados() {
@@ -449,7 +449,7 @@ public class GerenciarPerguntasController {
 
 		pergunta.setRespostaCerta(codRespostaCerta);
 		new PerguntaController().adicionar(pergunta);
-		Logging.getControlsLogger().info("Executou Método ->  salvarDados()");
+//		Logging.getControlsLogger().info("Executou Método ->  salvarDados()");
 	}
 
 	private void mostrarPerguntaDaTabela(Pergunta perguntaSelecionada, long cod) {

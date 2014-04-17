@@ -2,6 +2,7 @@ package br.mw.conc.view;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -14,6 +15,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import br.mw.conc.controller.PerguntaController;
+import br.mw.conc.model.Pergunta;
 
 public class PrincipalController {
 
@@ -53,7 +56,7 @@ public class PrincipalController {
 
 	@FXML
 	void getGerenciarPerguntasRespostas(ActionEvent event) {
-		chamarTela("./Cadastro.fxml");
+		chamarTela("/br/mw/conc/view/Cadastro.fxml");
 	}
 
 	@FXML
@@ -62,36 +65,24 @@ public class PrincipalController {
 
 	@FXML
 	void getSair(ActionEvent event) {
-	    // Obter o stage a partir de um componente dele. 
+		// Obter o stage a partir de um componente dele.
 		// No caso o botÃ£o btnGerenciarPergResp.
-	    Stage stage = (Stage) btnGerenciarPergResp.getScene().getWindow();
-	    stage.close();		
+		Stage stage = (Stage) btnGerenciarPergResp.getScene().getWindow();
+		stage.close();
 	}
 
 	@FXML
 	void getTelaQuestoes(ActionEvent event) {
-		chamarTela("./Resolucao.fxml");
+		if (bdEstaVazio()) {
+			lblMensagem.setText("Adicione alguma pergunta antes de começar!");
+		} else {
+			lblMensagem.setText("");
+			chamarTela("/br/mw/conc/view/Resolucao.fxml");
+		}
 	}
 
 	@FXML
 	void initialize() {
-		// assert btnAdicionar != null :
-		// "fx:id=\"btnAdicionar\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert btnGerenciarPergResp != null :
-		// "fx:id=\"btnGerenciarPergResp\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert btnRemover != null :
-		// "fx:id=\"btnRemover\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert btnRespQuestoes != null :
-		// "fx:id=\"btnRespQuestoes\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert btnSair != null :
-		// "fx:id=\"btnSair\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert lblMensagem != null :
-		// "fx:id=\"lblMensagem\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert lstvUsuarios != null :
-		// "fx:id=\"lstvUsuarios\" was not injected: check your FXML file 'Principal.fxml'.";
-		// assert tfUsuario != null :
-		// "fx:id=\"tfUsuario\" was not injected: check your FXML file 'Principal.fxml'.";
-
 	}
 
 	private void chamarTela(String tela) {
@@ -107,6 +98,14 @@ public class PrincipalController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	private boolean bdEstaVazio() {
+		boolean retorno = false;
+		List<Pergunta> perguntas = new PerguntaController().listar();
+		if (perguntas == null || perguntas.size() <= 0)
+			retorno = true;
+		return retorno;
 	}
 
 }

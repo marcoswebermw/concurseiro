@@ -203,7 +203,7 @@ public class ResolucaoController {
 		carregarPerguntas();
 		mostrarOcultarObs();
 		exibirPergunta();
-		iniciarPontuação();		
+		iniciarPontuacao();		
 	}
 
 	@FXML
@@ -312,7 +312,7 @@ public class ResolucaoController {
 		linkAvancar.setVisible(true);
 	}
 
-	private void iniciarPontuação() {
+	private void iniciarPontuacao() {
 		pontuacao = new Pontuacao();
 		pontuacao.setNome("Fulano de Tal");
 		pontuacao.setTotalPerguntas(perguntasDoBD.size());
