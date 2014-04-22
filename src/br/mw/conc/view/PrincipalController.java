@@ -74,7 +74,7 @@ public class PrincipalController {
 	@FXML
 	void getTelaQuestoes(ActionEvent event) {
 		if (bdEstaVazio()) {
-			lblMensagem.setText("Adicione alguma pergunta antes de começar!");
+			lblMensagem.setText("Adicione alguma pergunta antes de comeÃ§ar!");
 		} else {
 			lblMensagem.setText("");
 			chamarTela("/br/mw/conc/view/Resolucao.fxml");

@@ -299,7 +299,7 @@ public class ResolucaoController {
 	private void errou() {
 		pontuacao.errou();
 		lblErros.setText("Erros: " + pontuacao.getErrou());
-		lblNumQuestoes.setText("Questıes: " + pontuacao.getNumQuestoesFeitas()
+		lblNumQuestoes.setText("Quest√µes: " + pontuacao.getNumQuestoesFeitas()
 				+ "/" + pontuacao.getTotalPerguntas());
 		linkAvancar.setVisible(true);
 	}
@@ -307,7 +307,7 @@ public class ResolucaoController {
 	private void acertou() {
 		pontuacao.acertou();
 		lblAcertos.setText("Acertos: " + pontuacao.getAcertou());
-		lblNumQuestoes.setText("Questıes: " + pontuacao.getNumQuestoesFeitas()
+		lblNumQuestoes.setText("Quest√µes: " + pontuacao.getNumQuestoesFeitas()
 				+ "/" + pontuacao.getTotalPerguntas());		
 		linkAvancar.setVisible(true);
 	}
@@ -316,7 +316,7 @@ public class ResolucaoController {
 		pontuacao = new Pontuacao();
 		pontuacao.setNome("Fulano de Tal");
 		pontuacao.setTotalPerguntas(perguntasDoBD.size());
-		lblNumQuestoes.setText("Questıes: " + pontuacao.getNumQuestoesFeitas()
+		lblNumQuestoes.setText("Quest√µes: " + pontuacao.getNumQuestoesFeitas()
 				+ "/" + pontuacao.getTotalPerguntas());
 		
 		lblAcertos.setText("Acertos: 0");
@@ -331,7 +331,7 @@ public class ResolucaoController {
 			lblObservacoes.setVisible(false);
 		} else {
 			taObservacoes.setText(perguntasDoBD.get(perguntasDoBD.size() - 1)
-					.getTexto());
+					.getObservacao());
 			taObservacoes.setVisible(true);
 			lblObservacoes.setVisible(true);
 

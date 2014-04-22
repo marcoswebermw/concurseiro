@@ -159,7 +159,7 @@ public class GerenciarPerguntasController {
 				lblPerguntaErro, "*Informe a pergunta!");
 		boolean provaErro = ValidacaoFormulario.campoPreenchido(tfProva,
 				lblProvaErro, "*Informe a prova!");
-		// Existem questıes com apenas opÁ„o de verdadeiro e falso.
+		// Existem quest√µes com apenas op√ß√£o de verdadeiro e falso.
 		 boolean respostaAErro = ValidacaoFormulario.campoPreenchido(
 		 taRespostaA, lblRespostaAErro, "*Informe obrigatoriamente a resposta A!");
 		 boolean respostaBErro = ValidacaoFormulario.campoPreenchido(
@@ -200,7 +200,7 @@ public class GerenciarPerguntasController {
 	// Handler for Button[fx:id="btnDeletar"] onAction
 	@FXML
 	void deletarPergunta(ActionEvent event) {
-		String msg = "Pergunta excluÌda corretamente!";
+		String msg = "Pergunta exclu√≠da corretamente!";
 		if (perguntas.getSelectionModel().isEmpty())
 			return;
 
