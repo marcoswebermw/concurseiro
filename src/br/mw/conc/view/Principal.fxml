@@ -16,6 +16,6 @@
     <ListView fx:id="lstvUsuarios" layoutX="391.0" layoutY="90.0" prefHeight="139.0" prefWidth="374.0" />
     <Button fx:id="btnRemover" layoutX="549.0" layoutY="245.0" mnemonicParsing="false" onAction="#getRemover" prefHeight="30.0" prefWidth="100.0" text="Remover" />
     <Button id="Adicionar" fx:id="btnAdicionar" layoutX="664.0" layoutY="245.0" mnemonicParsing="false" onAction="#getAdicionar" prefHeight="30.0" prefWidth="100.0" text="Adicionar" />
-    <Label fx:id="lblMensagem" layoutX="50.0" layoutY="357.0" text="Mensagem Aqui!" />
+    <Label fx:id="lblMensagem" layoutX="50.0" layoutY="357.0" text="Mensagem Aqui!" textFill="RED" />
   </children>
 </AnchorPane>

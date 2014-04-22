@@ -71,7 +71,7 @@
     <AnchorPane fx:id="apCabecalho" disable="true" focusTraversable="false" prefHeight="47.0" prefWidth="1024.0" AnchorPane.bottomAnchor="721.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
     <HBox id="HBox" alignment="CENTER" layoutX="397.0" layoutY="11.0" spacing="40.0">
       <children>
-        <Label fx:id="lblNumQuestoes" text="Questoes: 1/60" textFill="#0083cc">
+        <Label fx:id="lblNumQuestoes" text="Questões: 1/60" textFill="#0083cc">
           <effect>
             <Glow fx:id="x4" />
           </effect>

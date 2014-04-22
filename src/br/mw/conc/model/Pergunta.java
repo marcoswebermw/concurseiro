@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 /**
@@ -24,7 +25,8 @@ public class Pergunta {
 	@Column(name = "cod")
 	private long cod;
 
-	@Column(name = "texto")
+	@Lob
+	@Column(length = 10000, name = "texto")
 	private String texto;
 
 	@Column(name = "categoria")
@@ -39,7 +41,8 @@ public class Pergunta {
 	@Column(name = "ano")
 	private long ano;
 
-	@Column(name = "observacao")
+	@Lob
+	@Column(length = 10000, name = "observacao")
 	private String observacao;
 
 	@Column(name = "fk_resposta_cod")

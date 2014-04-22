@@ -83,6 +83,7 @@ public class PrincipalController {
 
 	@FXML
 	void initialize() {
+		lblMensagem.setText("");
 	}
 
 	private void chamarTela(String tela) {

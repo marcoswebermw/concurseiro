@@ -45,7 +45,7 @@ public class ValidacaoFormulario {
 			Pattern p = Pattern.compile("[^0]\\d{3,3}");
 			Matcher m = p.matcher(t.getText());
 			if (!m.matches()) {
-				c = "Ano com 4 d√≠gitos!";
+				c = "Ano com 4 dÌgitos!";
 				r = false;
 			}
 
@@ -53,7 +53,7 @@ public class ValidacaoFormulario {
 				Calendar ano = Calendar.getInstance();
 				ano.set(Calendar.YEAR, Integer.parseInt(t.getText()));
 			} catch (Exception e) {
-				c = "Ano inv√°lido!";
+				c = "Ano inv·lido!";
 				r = false;
 			}
 

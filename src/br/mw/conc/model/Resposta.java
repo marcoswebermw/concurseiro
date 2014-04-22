@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 /**
  * @author marcos
@@ -16,7 +17,8 @@ public class Resposta {
 	@Column(name = "cod")
 	private long cod;
 
-	@Column(name = "texto")
+	@Lob
+	@Column(length = 10000, name = "texto")
 	private String texto;
 
 	// GETTERS E SETTERS
